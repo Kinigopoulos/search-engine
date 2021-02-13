@@ -8,11 +8,14 @@ With it you are able to:
 - Ask for results with a specified query (aka as google them)
 - Mark the relevant results and get a new query
 
-####Requirements to run
+#### Requirements to run
 1. Node js (npm)
-2. Java (tested only in Version 14)
+2. Java (tested only in Version 14)  
+To run the program you need to follow these steps:  
+- run `npm install` in this folder and then in server (using cmd).
+- run `npm run dev` in this folder
 
-####Technologies used
+#### Technologies used
 1. React JS
 2. Node JS / Express
 3. Java 14
