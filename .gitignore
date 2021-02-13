@@ -1,15 +1,23 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+.idea/
+server/CrawlerSourceCode/.idea
+
 # dependencies
-/node_modules
-/.pnp
+server/words/*
+server/documents/*
+server/CrawlerSourceCode/words/*
+server/CrawlerSourceCode/documents/*
+server/node_modules/
+node_modules/
+.pnp
 .pnp.js
 
 # testing
-/coverage
+coverage
 
 # production
-/build
+build/
 
 # misc
 .DS_Store

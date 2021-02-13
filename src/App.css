@@ -1,38 +1,251 @@
 .App {
-  text-align: center;
+    text-align: center;
+    height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.searchStuff {
+    padding-top: 30vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.searchTitle {
+    color: rgba(212, 228, 255, 0.91);
+    font-size: 45px;
+    margin-top: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.searchInput {
+    border-radius: 35px;
+    border-color: white;
+    outline-width: 0;
+    background-color: #000000;
+    height: 65px;
+    width: 600px;
 }
 
-.App-link {
-  color: #61dafb;
+.helpText{
+    color: #757873;
+    margin-top: 30vh;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+input[type=text], input[type=number] {
+    padding: 12px 20px;
+    font-family: SansSerif, sans-serif;
+    font-size: x-large;
+    color: white;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+input[type=checkbox]{
+
+    width: 30px !important;
+    height: 30px !important;
+    margin: 5px;
+    box-shadow: none;
+    outline: 0;
+    font-size: 2em;
+}
+
+.searchButton {
+    background-color: #000000;
+    border: none;
+    width: 18vw;
+    margin: 15px 10px 0 10px;
+    border-radius: 10px;
+    color: white;
+    outline: 0;
+    box-shadow: 0 0 3px #ddd;
+    padding: 12px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.searchButton:hover {
+    background-color: #141414;
+}
+
+.searchButton:active {
+    background-color: #131326;
+}
+
+@keyframes slideToTop {
+    0% {
+        padding-top: 30vh;
+    }
+    100% {
+        padding-top: 0;
+    }
+}
+
+.searchStuffOnResults {
+    animation: 0.6s 0s 1 slideToTop;
+    animation-fill-mode: forwards;
+    padding-top: 30vh;
+}
+
+@keyframes getSmall {
+    0% {
+        font-size: 45px;
+    }
+    100% {
+        font-size: 20px;
+        margin-bottom: 0;
+    }
+}
+
+.searchTitleOnResults {
+    animation: 0.6s 0s 1 getSmall;
+    animation-fill-mode: forwards;
+    color: rgba(212, 228, 255, 0.91);
+    font-size: 45px;
+    margin-top: 0;
+}
+
+@keyframes removeMargin {
+    0% {
+        margin: 15px 10px 0 10px;
+    }
+    100% {
+        margin: 0 10px 0 10px;
+    }
+}
+
+.searchButtonOnResults {
+    animation: 0.6s 0s 1 removeMargin;
+    animation-fill-mode: forwards;
+}
+
+@keyframes wideLine {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 93%;
+    }
+}
+
+.line {
+    margin-top: 15px;
+    height: 1px;
+    width: 93%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #b4b4b4;
+    animation: 0.6s 0s 1 wideLine;
+}
+
+.results {
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    padding-bottom: 10px;
+}
+
+.resultContainer {
+    position: relative;
+    color: whitesmoke;
+    text-align: left;
+    background-color: rgba(0, 0, 0, 0.31);
+    border-radius: 20px;
+    padding: 1px 20px;
+    margin: 10px 0;
+}
+
+.resultTitle {
+    margin: 0;
+}
+
+.resultUrl {
+
+}
+
+.resultScore{
+    position: absolute;
+    left: -65px;
+    top: 50%;
+    text-align: center;
+}
+
+.resultSimilarity{
+    margin: 0;
+}
+
+.resultsHelpful{
+    padding-top: 0;
+    margin-top: 0;
+    display:inline-block;
+    width: auto;
+}
+
+.resultsForm{
+    display:inline-block;
+    width: auto;
+}
+
+.feedbackButton{
+    margin: 0 10px 0 10px;
+    animation: 1.5s changeColor;
+    animation-iteration-count: infinite;
+}
+
+
+@keyframes changeColor {
+    0% {
+        background-color: #000000;
+    }
+    50% {
+        background-color: #345033;
+    }
+    100% {
+        background-color: #000000;
+    }
+}
+
+input[type="radio"]{
+    margin: 0 2px 0 15px;
+}
+
+a:link{
+    color: #71b9ff;
+    text-decoration: none;
+}
+
+a:visited{
+    color: #a91aff;
+}
+
+.resultDescription {
+    color: #b4b4b4;
+    font-size: larger;
+    margin-top: 7px;
+    margin-bottom: 0;
+}
+
+.crawlerMenu {
+    background-color: rgba(0, 0, 0, 0.31);
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    color: #b4b4b4;
+    border-radius: 20px;
+    padding-top: 5px;
+    padding-bottom: 35px;
+}
+
+.crawlerTitle {
+    color: whitesmoke;
+    font-size: xx-large;
+}
+
+.addBottomMargin{
+    margin-bottom: 20px !important;
+}
+
+.crawlerLabel {
+    margin: 0;
 }
