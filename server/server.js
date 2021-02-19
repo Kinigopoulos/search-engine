@@ -144,7 +144,12 @@ async function getFeedback(query, R, NR){
         terms.set(term, 1.0)
     });
 
-    function calculate(table, constant, length) {
+    function calculate(table, constant) {
+        if(table === undefined || table.length === 0){
+            return;
+        }
+        const length = table.length;
+
         table.forEach(id => {
             const path = "./documents/" + id;
             const data = fs.readFileSync(path, 'utf-8');
@@ -159,8 +164,8 @@ async function getFeedback(query, R, NR){
         })
     }
 
-    calculate(R, a, R.length);
-    calculate(NR, b, NR.length);
+    calculate(R, a);
+    calculate(NR, b);
 
     const mapSort = Array.from(new Map([...terms.entries()].sort((a, b) => b[1] - a[1])));
 
